@@ -8,6 +8,6 @@
     "digest": "node prepare-digest.js"
   },
   "dependencies": {
-    "fast-xml-parser": "^4.3.0"
+    "fast-xml-parser": "^5.5.9"
   }
 }
