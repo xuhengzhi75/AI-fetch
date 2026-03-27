@@ -14,13 +14,13 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const CONFIG_DIR = join(homedir(), '.bestblogs-daily');
+const CONFIG_DIR = join(homedir(), '.bestblogs-digest');
 const STATE_FILE = join(CONFIG_DIR, 'state.json');
 const CONFIG_FILE = join(CONFIG_DIR, 'config.json');
 const LOCAL_PROMPTS_DIR = join(__dirname, '..', 'prompts');
 const USER_PROMPTS_DIR = join(CONFIG_DIR, 'prompts');
 
-const REMOTE_PROMPTS_BASE = 'https://raw.githubusercontent.com/qujingde/bestblogs-daily/main/prompts';
+const REMOTE_PROMPTS_BASE = 'https://raw.githubusercontent.com/qujingde/bestblogs-digest/main/prompts';
 
 // --- Load state (dedup + lastRun) ---
 function loadState() {

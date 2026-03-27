@@ -65,7 +65,7 @@ Identify the day's overarching theme or most surprising development across all c
 {closing reflection}
 
 ---
-*Source: [BestBlogs.dev](https://www.bestblogs.dev) · Curated by [bestblogs-daily](https://github.com/qujingde/bestblogs-daily)*
+*Source: [BestBlogs.dev](https://www.bestblogs.dev) · Curated by [bestblogs-digest](https://github.com/qujingde/bestblogs-digest)*
 ```
 
 ---

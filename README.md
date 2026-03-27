@@ -1,4 +1,4 @@
-# bestblogs-daily
+# bestblogs-digest
 
 **每日 AI 精选日报 · 中英双语 · OpenClaw Skill**
 
@@ -8,9 +8,9 @@ A daily bilingual AI digest from [BestBlogs.dev](https://www.bestblogs.dev), del
 
 ## 这是什么 / What Is This
 
-`bestblogs-daily` 每天从 BestBlogs.dev 抓取 AI 评分 ≥ 90 分的高质量 AI 文章，按主题聚类，加上编辑点评，生成双语（中英）日报。
+`bestblogs-digest` 每天从 BestBlogs.dev 抓取 AI 评分 ≥ 90 分的高质量 AI 文章，按主题聚类，加上编辑点评，生成双语（中英）日报。
 
-`bestblogs-daily` fetches the highest-quality AI articles (score ≥ 90) from BestBlogs.dev daily, groups them into thematic clusters with editorial commentary, and delivers a bilingual (English + Chinese) digest.
+`bestblogs-digest` fetches the highest-quality AI articles (score ≥ 90) from BestBlogs.dev daily, groups them into thematic clusters with editorial commentary, and delivers a bilingual (English + Chinese) digest.
 
 **BestBlogs.dev** 已用 AI 对每篇文章做了摘要和评分 — 本 skill 的工作是进一步策展，而非重新摘要。
 
@@ -23,14 +23,14 @@ BestBlogs.dev already summarizes and scores every article with AI — this skill
 ### OpenClaw
 
 ```bash
-clawhub install bestblogs-daily
+clawhub install bestblogs-digest
 ```
 
 或手动克隆：
 
 ```bash
-git clone https://github.com/qujingde/bestblogs-daily ~/skills/bestblogs-daily
-cd ~/skills/bestblogs-daily/scripts && npm install
+git clone https://github.com/qujingde/bestblogs-digest ~/skills/bestblogs-digest
+cd ~/skills/bestblogs-digest/scripts && npm install
 ```
 
 ---
@@ -57,7 +57,7 @@ On first run, an onboarding wizard guides you through setup (language, frequency
 
 ## 配置项 / Configuration
 
-配置文件位置：`~/.bestblogs-daily/config.json`
+配置文件位置：`~/.bestblogs-digest/config.json`
 
 | 字段 | 默认值 | 说明 |
 |------|--------|------|
@@ -71,10 +71,10 @@ On first run, an onboarding wizard guides you through setup (language, frequency
 
 ## 自定义 Prompt / Custom Prompts
 
-将 `prompts/` 目录复制到 `~/.bestblogs-daily/prompts/` 并修改即可覆盖默认 prompt：
+将 `prompts/` 目录复制到 `~/.bestblogs-digest/prompts/` 并修改即可覆盖默认 prompt：
 
 ```bash
-cp -r ~/skills/bestblogs-daily/prompts ~/.bestblogs-daily/prompts
+cp -r ~/skills/bestblogs-digest/prompts ~/.bestblogs-digest/prompts
 ```
 
 ---
@@ -102,7 +102,7 @@ LLM (Claude) generates editorial digest
      ↓ (thematic clustering + bilingual interleaving)
 OpenClaw delivers to channel
      ↓
-Update ~/.bestblogs-daily/state.json (dedup state)
+Update ~/.bestblogs-digest/state.json (dedup state)
 ```
 
 与 [follow-builders](https://github.com/zarazhangrui/follow-builders) 相比，无需 GitHub Actions 服务端管线 — BestBlogs RSS 本身就是公开的稳定数据源，每小时更新。

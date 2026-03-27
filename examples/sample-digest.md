@@ -90,4 +90,4 @@ Today's thread: **measuring AI capabilities is getting harder**. Infrastructure 
 
 ---
 
-*Source: [BestBlogs.dev](https://www.bestblogs.dev) · Curated by [bestblogs-daily](https://github.com/qujingde/bestblogs-daily)*
+*Source: [BestBlogs.dev](https://www.bestblogs.dev) · Curated by [bestblogs-digest](https://github.com/qujingde/bestblogs-digest)*

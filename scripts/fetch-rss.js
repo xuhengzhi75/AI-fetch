@@ -24,7 +24,7 @@ async function fetchRSS(language) {
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
       const res = await fetch(url, {
-        headers: { 'User-Agent': 'bestblogs-daily/1.0 (+https://github.com/qujingde/bestblogs-daily)' },
+        headers: { 'User-Agent': 'bestblogs-digest/1.0 (+https://github.com/qujingde/bestblogs-digest)' },
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return await res.text();
