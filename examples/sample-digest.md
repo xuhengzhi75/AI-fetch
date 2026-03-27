@@ -1,93 +1,50 @@
-# AI Digest — 2026-03-26
+# Sample Digest — bestblogs-digest
 
-# AI 日报 — 2026-03-26
-
-今日精选 3 篇高分 AI 文章（评分 ≥ 90），涵盖 AI 评测方法论、推理模型进化路径、以及 LLM 推理加速突破。
-
-Today's digest features 3 high-scoring AI articles (score ≥ 90), covering eval methodology, the evolution of reasoning models, and a breakthrough in LLM inference acceleration.
+以下为双语（bilingual）模式下的实际输出示例。
 
 ---
 
-## Eval 方法论：你的 benchmark 可能在撒谎
+📰 AI 日报 · 2026-03-26
 
-## Eval Methodology: Your Benchmark Might Be Lying
+今天的 AI 世界围绕一个核心问题展开：模型到底在进化什么？从 Codex 的插件生态、Gemini 的实时音频，到推理模型向 agentic 思维的范式转移，主线清晰——AI 正在从「会思考」走向「会行动」。最值得关注的是宝玉对推理与指令模式合并趋势的拆解，这是理解未来 6 个月模型发展方向的必读视角。
 
-当 agentic AI 越来越多地在真实环境中执行任务，如何公平评测成了一个棘手问题。这两篇文章从不同角度揭示了：基础设施本身会成为评测结果的干扰变量。
+Today's AI world circles one core question: what exactly are models evolving toward? From Codex plugins to Gemini's real-time audio and the paradigm shift from reasoning to agentic thinking, the throughline is clear — AI is moving from "can think" to "can act." The most essential read: dotey's breakdown of the merger between reasoning and instruction modes, a must for understanding the next 6 months of model development.
 
-As agentic AI increasingly operates in real environments, fair evaluation becomes tricky. These articles reveal that infrastructure itself can become a confounding variable in benchmark results.
+共 5 篇 · 预计阅读 3 分钟
+━━━━━━━━━━━━━━━━━━━━━━
 
-### [Quantifying infrastructure noise in agentic coding evals（量化 agentic 评测中的基础设施噪声）](https://www.bestblogs.dev/en/article/70b91279)
+01｜OpenAI Launches Plugins for Codex
+  OpenAI 为 Codex 引入插件支持，实现与 Slack、Figma、Notion 和 Gmail 等工具的无缝集成。
+  OpenAI introduces plugin support for Codex, enabling seamless integration with tools like Slack, Figma, Notion, and Gmail.
 
-**Score: 92** · Anthropic Engineering · 8 min
+🔗 https://www.bestblogs.dev/article/abc123
 
-Anthropic's research quantifies how infrastructure configurations — specifically CPU and RAM limits — can swing agentic coding benchmark scores by up to 6 percentage points, potentially masking true model capabilities.
+02｜Announcing Gemini 3.1 Flash Live
+  Demis Hassabis 宣布推出 Gemini 3.1 Flash Live，这是一款针对低延迟和自然交互进行优化的高质量音频与语音模型。
+  Demis Hassabis announces Gemini 3.1 Flash Live, a high-quality audio and voice model optimized for low latency and natural interaction.
 
-Anthropic 的研究量化了基础设施配置（特别是 CPU 和 RAM 限制）如何让 agentic 编程评测分数波动高达 6 个百分点，从而掩盖模型的真实能力。
+🔗 https://www.bestblogs.dev/article/def456
 
-**Key Points:**
+03｜From 'Reasoning' to 'Agentic' Thinking
+  宝玉深度解读大模型从「推理」向「智能体」思维的范式转移，分析了 Qwen3、Anthropic 等在推理与指令模式合并上的不同路径。
+  dotey provides a deep dive into the paradigm shift of LLMs from reasoning to agentic thinking, analyzing different approaches by Qwen3 and Anthropic on merging reasoning and instruction modes.
 
-**关键要点：**
+🔗 https://www.bestblogs.dev/article/ghi789
 
-- **Infrastructure is an active component, not a passive container**: In agentic evals, models write code and run tests in real-time. CPU/RAM differences mean two agents are essentially taking different tests.
+04｜Quantifying Infrastructure Noise in Agentic Coding Evals
+  Anthropic 研究量化了 CPU/RAM 配置差异如何让 agentic 编程评测分数波动高达 6 个百分点，小于 3% 的排行榜差距在统计上等同于噪声。
+  Anthropic quantifies how CPU/RAM configuration differences can swing agentic coding benchmark scores by up to 6 percentage points — leaderboard gaps under 3% are statistically indistinguishable from infrastructure noise.
 
-- **基础设施是主动参与者，不是被动容器**：在 agentic 评测中，模型实时编写代码并运行测试。CPU/RAM 的差异意味着两个 agent 实际上在参加不同的考试。
+🔗 https://www.bestblogs.dev/article/jkl012
 
-- **Small leaderboard gaps (<3%) are statistically indistinguishable from infrastructure noise**: Minor leads on public leaderboards may reflect hardware differences rather than superior model intelligence.
+05｜From ORM to PRM: The Birth of Reasoning Models
+  本文深入拆解推理模型从 ORM 到 PRM 的演进路径，以及 Test-Time Computation、MCTS 和 GRPO 在其中扮演的关键角色。
+  An in-depth breakdown of reasoning models' evolution from ORM to PRM, and the critical roles of Test-Time Computation, MCTS, and GRPO.
 
-- **排行榜上小于 3% 的差距在统计上与基础设施噪声无法区分**：公开排行榜上的微小领先可能反映的是硬件差异，而非真实能力差距。
+🔗 https://www.bestblogs.dev/article/mno345
 
-> "A few-point lead might signal a real capability gap — or it might just be a bigger VM."
+━━━━━━━━━━━━━━━━━━━━━━
+📌 今日主线：AI 的进化方向正在从「更聪明」转向「更能干」——推理能力已成基础设施，下一场竞争在 agentic 执行层。
+📌 Today's thread: AI evolution is shifting from "smarter" to "more capable" — reasoning is now infrastructure, and the next competition is at the agentic execution layer.
 
-> "几个百分点的领先可能意味着真正的能力差距——也可能只是 VM 更大了。"
-
-[Read on BestBlogs](https://www.bestblogs.dev/en/article/70b91279)
-
----
-
-## Reasoning Model 进化史
-
-## The Evolution of Reasoning Models
-
-从 ORM 到 PRM，从 Chain-of-Thought 到 MCTS，推理模型的崛起有一条清晰的技术脉络。这篇长文是理解 DeepSeek、o1 等模型背后逻辑的必读材料。
-
-From ORM to PRM, from Chain-of-Thought to MCTS, the rise of reasoning models follows a clear technical trajectory. This long-form piece is essential reading for understanding the logic behind DeepSeek, o1, and similar models.
-
-### [From ORM to PRM, the Birth of Reasoning Models（从 ORM 到 PRM：推理模型的诞生）](https://www.bestblogs.dev/en/article/d5319aed)
-
-**Score: 90** · 青稞AI · 124 min
-
-This article provides an in-depth analysis of the evolution of Reasoning models from ORM to PRM, detailing the critical roles of Test-Time Computation, MCTS search strategies, and the GRPO algorithm in enhancing model logical reasoning capabilities.
-
-本文深入分析了推理模型从 ORM 到 PRM 的演进，详细阐述了 Test-Time Computation、MCTS 搜索策略和 GRPO 算法在提升模型逻辑推理能力中的关键作用。
-
-**Key Points:**
-
-**关键要点：**
-
-- **ORM→PRM 是提升推理能力的核心转变**: ORM 只关注最终结果，导致稀疏奖励和 Reward Hacking。PRM 对每个推理步骤打分，实现更精准的信用分配。
-
-- **The ORM→PRM shift is the core leap**: ORM focuses only on final results, causing sparse rewards and Reward Hacking. PRM scores every reasoning step, enabling precise credit assignment.
-
-- **Test-Time Computation 的算力分配策略**: 简单问题用「深度打磨」（sequential refinement）；难题用「广撒网」（parallel sampling）。动态平衡是关键。
-
-- **Test-Time Computation allocation strategy**: Simple problems → "deep polishing" (sequential refinement); hard problems → "casting a wide net" (parallel sampling). Dynamic balance is key.
-
-> "PRM is the key to achieving this. Because PRM can evaluate intermediate steps, it can provide real-time guidance during the answer generation process, helping the model perform 'deliberate' searches, similar to playing chess."
-
-> "PRM 是实现这一目标的关键。因为 PRM 可以评估中间步骤，它能在答案生成过程中提供实时指导，帮助模型进行'深思熟虑'的搜索，就像下棋一样。"
-
-[Read on BestBlogs](https://www.bestblogs.dev/en/article/d5319aed)
-
----
-
-## Editor's Note
-
-## 编辑手记
-
-今天有一条主线：**AI 能力评估正在变得越来越复杂**。评测基础设施会影响分数，推理模型的进步方式不是简单堆算力，而是在推理过程中引入更精密的搜索和奖励机制。这提醒我们：排行榜数字要看，但更要看数字背后的方法论。
-
-Today's thread: **measuring AI capabilities is getting harder**. Infrastructure skews benchmarks, and reasoning improvements come not from raw compute but from sophisticated search and reward mechanisms applied during inference. The lesson: leaderboard numbers matter, but methodology matters more.
-
----
-
-*Source: [BestBlogs.dev](https://www.bestblogs.dev) · Curated by [bestblogs-digest](https://github.com/qujingde/bestblogs-digest)*
+来源：BestBlogs.dev（AI 评分 ≥ 90）
