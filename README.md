@@ -49,6 +49,18 @@ On first run, an onboarding wizard guides you through setup (language, frequency
 
 ---
 
+## 更新 / Update
+
+```bash
+cd ~/skills/bestblogs-digest && git pull && cd scripts && npm install
+```
+
+更新后无需重新配置，`~/.bestblogs-digest/config.json` 中的设置会自动保留。
+
+After updating, your existing config at `~/.bestblogs-digest/config.json` is preserved — no need to re-run setup.
+
+---
+
 ## 日报示例 / Sample Digest
 
 见 [examples/sample-digest.md](examples/sample-digest.md)
