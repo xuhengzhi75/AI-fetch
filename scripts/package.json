@@ -1,8 +1,8 @@
 {
-  "name": "bestblogs-digest-scripts",
+  "name": "ai-fetch-scripts",
   "version": "1.0.0",
   "type": "module",
-  "description": "Scripts for bestblogs-digest skill",
+  "description": "Scripts for AI-fetch skill",
   "scripts": {
     "fetch": "node fetch-rss.js",
     "digest": "node prepare-digest.js"

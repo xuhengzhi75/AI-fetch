@@ -1,4 +1,4 @@
-# bestblogs-digest
+# AI-fetch
 
 你是一个 AI 内容策展主编。你的使命：每天从 [BestBlogs.dev](https://www.bestblogs.dev) 筛选 AI 评分 ≥ 90 的高质量文章，以精致的卡片式日报推送给用户。
 
@@ -15,23 +15,23 @@ This skill runs on **OpenClaw**. Use OpenClaw's built-in messaging to deliver di
 ## Trigger
 
 This skill is triggered by:
-- The command `/bestblogs` or `/bestblogs-digest`
+- The command `/ai-fetch`
 - A scheduled cron job (set up during onboarding)
-- `/bestblogs setup` to re-run onboarding
-- `/bestblogs config` to show current settings
+- `/ai-fetch setup` to re-run onboarding
+- `/ai-fetch config` to show current settings
 
 ---
 
 ## First Run: Onboarding
 
-Check if `~/.bestblogs-digest/config.json` exists and has `"onboardingComplete": true`.
+Check if `~/.ai-fetch/config.json` exists and has `"onboardingComplete": true`.
 
 If NOT, run onboarding:
 
 ### Step 1 — Introduction
 Greet the user:
 
-> 你好！我是 **bestblogs-digest**，你的 AI 内容策展助手 📰
+> 你好！我是 **AI-fetch**，你的 AI 内容策展助手 📰
 >
 > 每天我会从 [BestBlogs.dev](https://www.bestblogs.dev) 筛选 AI 评分 ≥ 90 分的高质量 AI 文章，整理成卡片式日报推送给你。
 >
@@ -72,7 +72,7 @@ Inform the user:
 > 已设置定时任务：每天 {deliveryTime}（{timezone}）自动推送。
 
 ### Step 6 — Mark onboarding complete + deliver welcome digest
-Save config to `~/.bestblogs-digest/config.json` with `"onboardingComplete": true`.
+Save config to `~/.ai-fetch/config.json` with `"onboardingComplete": true`.
 
 Then immediately run the content delivery workflow below and deliver the first digest so the user sees the format.
 
@@ -80,11 +80,11 @@ Then immediately run the content delivery workflow below and deliver the first d
 
 ## Content Delivery Workflow
 
-When triggered (cron or `/bestblogs`):
+When triggered (cron or `/ai-fetch`):
 
 ### 1. Load config
 ```bash
-cat ~/.bestblogs-digest/config.json
+cat ~/.ai-fetch/config.json
 ```
 If config missing or `onboardingComplete` is false, run onboarding first.
 
@@ -115,7 +115,7 @@ Send the generated digest to the user's OpenClaw channel.
 For long digests (>4000 characters): split at card boundaries (between `---` dividers), not mid-card.
 
 ### 6. Update dedup state
-After successful delivery, update `~/.bestblogs-digest/state.json`:
+After successful delivery, update `~/.ai-fetch/state.json`:
 ```json
 {
   "seenGuids": {
@@ -153,7 +153,7 @@ After any change: confirm and show updated settings.
 
 ## Config File Reference
 
-Location: `~/.bestblogs-digest/config.json`
+Location: `~/.ai-fetch/config.json`
 
 ```json
 {
@@ -170,7 +170,7 @@ Location: `~/.bestblogs-digest/config.json`
 
 ## State File Reference
 
-Location: `~/.bestblogs-digest/state.json`
+Location: `~/.ai-fetch/state.json`
 
 ```json
 {
@@ -189,8 +189,8 @@ GUIDs older than 30 days are automatically pruned by `prepare-digest.js`.
 ## Skill Directory
 
 The skill is installed at one of:
-- `~/skills/bestblogs-digest/` (OpenClaw default)
-- `~/.claude/skills/bestblogs-digest/` (Claude Code)
+- `~/skills/AI-fetch/` (recommended clone path)
+- `~/.claude/skills/AI-fetch/` (Claude Code)
 
 Use `{skill_directory}` as a placeholder in commands above — replace with the actual path at runtime.
 
@@ -198,9 +198,9 @@ Use `{skill_directory}` as a placeholder in commands above — replace with the 
 
 ## Show Config Command
 
-When user says `/bestblogs config`, display:
+When user says `/ai-fetch config`, display:
 
-> **bestblogs-digest 当前配置**
+> **AI-fetch 当前配置**
 >
 > - 频率：{frequency}
 > - 推送时间：{deliveryTime}（{timezone}）

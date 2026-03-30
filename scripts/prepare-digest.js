@@ -8,19 +8,19 @@
  * Usage: node fetch-rss.js | node prepare-digest.js
  */
 
-import { readFileSync, existsSync, writeFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import { homedir } from 'os';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const CONFIG_DIR = join(homedir(), '.bestblogs-digest');
+const PRIMARY_CONFIG_DIR = join(homedir(), '.ai-fetch');
+const CONFIG_DIR = PRIMARY_CONFIG_DIR;
 const STATE_FILE = join(CONFIG_DIR, 'state.json');
 const CONFIG_FILE = join(CONFIG_DIR, 'config.json');
 const LOCAL_PROMPTS_DIR = join(__dirname, '..', 'prompts');
 const USER_PROMPTS_DIR = join(CONFIG_DIR, 'prompts');
 
-const REMOTE_PROMPTS_BASE = 'https://raw.githubusercontent.com/qujingde/bestblogs-digest/main/prompts';
 
 // --- Load state (dedup + lastRun) ---
 function loadState() {
@@ -44,7 +44,7 @@ function loadConfig() {
   }
 }
 
-// --- Load a prompt file (user override > remote > local) ---
+// --- Load a prompt file (user override > local bundled fallback) ---
 async function loadPrompt(filename) {
   // 1. User custom override
   const userPath = join(USER_PROMPTS_DIR, filename);
@@ -52,17 +52,7 @@ async function loadPrompt(filename) {
     return readFileSync(userPath, 'utf8');
   }
 
-  // 2. Remote (latest from GitHub)
-  try {
-    const res = await fetch(`${REMOTE_PROMPTS_BASE}/${filename}`, {
-      signal: AbortSignal.timeout(5000),
-    });
-    if (res.ok) return await res.text();
-  } catch {
-    // fall through to local
-  }
-
-  // 3. Local bundled fallback
+  // 2. Local bundled fallback
   const localPath = join(LOCAL_PROMPTS_DIR, filename);
   if (existsSync(localPath)) {
     return readFileSync(localPath, 'utf8');

@@ -1,4 +1,4 @@
-# 示例日报 — bestblogs-digest
+# 示例日报 — AI-fetch
 
 以下为实际推送效果示例。
 
